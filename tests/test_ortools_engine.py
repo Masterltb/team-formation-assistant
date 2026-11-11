@@ -14,7 +14,7 @@ try:
     from app.matching.ortools_engine import OrToolsMatchingEngine
 
     _HAVE_ORTOOLS = True
-except Exception:  # pragma: no cover
+except ImportError:  # pragma: no cover
     _HAVE_ORTOOLS = False
 
 

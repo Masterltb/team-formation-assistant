@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .venv/
+*.egg-info/
 web/node_modules/
 web/dist/
 .forge/harness/

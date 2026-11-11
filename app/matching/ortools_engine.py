@@ -47,8 +47,8 @@ class OrToolsMatchingEngine:
         if k_min > k_max:
             return Formation(
                 status="infeasible", seed=seed,
-                conflicts=[f"cohort size {n} cannot be partitioned into teams of "
-                           f"[{project.min_size}, {project.max_size}]"],
+                conflicts=[(f"cohort size {n} cannot be partitioned into teams of "
+                            f"[{project.min_size}, {project.max_size}]")],
             )
         k = k_min
         comp = [round(by_id[sid].competency() * 100) for sid in ids]  # integer-scaled
@@ -105,7 +105,7 @@ class OrToolsMatchingEngine:
                     break
 
         # Canonicalize: sort members, then sort teams by members, then relabel (R8-stable).
-        canonical = sorted((sorted(m) for m in members_by_team))
+        canonical = sorted(sorted(m) for m in members_by_team)
         result_teams: list[Team] = []
         for t, members in enumerate(canonical):
             mean_comp = sum(by_id[m].competency() for m in members) / len(members) if members else 0.0

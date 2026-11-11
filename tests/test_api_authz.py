@@ -16,7 +16,7 @@ try:
     from app.repositories import InMemoryCohortRepository
 
     _HAVE_FASTAPI = True
-except Exception:  # pragma: no cover - skipped when deps absent
+except ImportError:  # pragma: no cover - skipped when deps absent
     _HAVE_FASTAPI = False
 
 

@@ -16,7 +16,7 @@ try:
     from app.infra.sql_repository import SqlCohortRepository
 
     _HAVE_SA = True
-except Exception:  # pragma: no cover
+except ImportError:  # pragma: no cover
     _HAVE_SA = False
 
 

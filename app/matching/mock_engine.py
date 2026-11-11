@@ -76,8 +76,8 @@ class MockMatchingEngine:
         if k_min > k_max:
             return Formation(
                 status="infeasible", seed=seed,
-                conflicts=[f"cohort size {n} cannot be partitioned into teams of "
-                           f"[{project.min_size}, {project.max_size}]"],
+                conflicts=[(f"cohort size {n} cannot be partitioned into teams of "
+                            f"[{project.min_size}, {project.max_size}]")],
             )
         k = k_min
         base, rem = divmod(n, k)
